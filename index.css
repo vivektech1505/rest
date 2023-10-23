@@ -1,0 +1,49 @@
+
+body, h1, h2 {
+    margin: 1px;
+    padding: 1px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    background-color: #f0f0f0;
+}
+.content {
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #c06868;
+    box-shadow: 0 2px 5px rgba(0, 0,0, 0.1);
+}
+
+@media(max-width : 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+}
+
+#increment-btn {
+display : inline-block;
+padding: 10px 10px;
+background-color: brown;
+color: #fff;
+border: none;;
+border-radius: 4px;
+font-size: 16px;
+cursor: pointer;
+}
+
+#save-btn {
+    display: inline-block;
+    padding: 10px ;
+    background-color:aqua;
+    color: green;
+    border: 4px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}

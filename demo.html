@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function functionvalidation() {
+            var pin = document.getElementById('pin').value;
+            
+            pinRegexPattern = /^\d{6}$/;
+
+            if (pin.match(pinRegexPattern)) {
+                displayPincodeData();
+            } else {
+                alert("Pin must be 6 digits!");
+            }
+        }
+
+        function displayPincodeData() {
+            let pincodeData = [
+                {
+                    pincode: 841405,
+                    delivery: 23,
+                    cod: true
+                },
+                {
+        pincode : 841406,
+        delevery : 25,
+        cod : true
+    },
+    {
+        pincode : 841407,
+        delevery : 25,
+        cod : true
+    },
+    {
+        pincode : 841409,
+        delevery : 25,
+        cod : true,
+    },
+    {
+        pincode : 841404,
+        delevery : 25,
+        cod : true
+    },
+    {
+        pincode : 841403,
+        delevery : 25,
+        cod : true
+    }
+            ];
+
+            var output = document.getElementById('output');
+            output.innerHTML = ""; // Clear previous data
+
+            pincodeData.forEach(function (pincodeObject) {
+                var listItem = document.createElement('li');
+                listItem.textContent = `PIN: ${pincodeObject.pincode}, Delivery: ${pincodeObject.delivery}, COD: ${pincodeObject.cod}`;
+                output.appendChild(listItem);
+            });
+        }
+    </script>
+</head>
+<body>
+    <form name="form" action="#">
+        <input type="text" id="pin" placeholder="Enter your PIN"> <br> <br>
+        <button type="button" onclick="functionvalidation()">Submit</button>
+    </form>
+
+    <h2>Pin Code Data</h2>
+    <ul id="output"></ul>
+</body>
+</html>
